@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React  from "react";
 import MenuItem from "./MenuItem";
 import { Box, Button, List } from "@mui/material";
 import CloseIcon from '@mui/icons-material/Close';
@@ -26,7 +26,7 @@ const Menu = ({ items, onClose }) => {
       </Box>
 
       {items.map((item) => (
-        <MenuItem item={item} key={item.tittle} />
+        <MenuItem item={item} key={item.title} />
       ))}
     </List>
   );

@@ -1,4 +1,4 @@
-import React, { useEffect,useState } from "react";
+import React, { useState } from "react";
 import { SideMenu } from "../../components/SideMenu";
 import MenuIcon from "@mui/icons-material/Menu";
 import {
@@ -6,10 +6,10 @@ import {
   Toolbar,
   Box,
   Typography,
-  IconButton,
+  
   Container,
   Button,
-  Avatar,
+  
 } from "@mui/material";
 import { Outlet } from "react-router-dom";
 import { PopMenu } from "../../components/PopMenu";
