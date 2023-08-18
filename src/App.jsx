@@ -5,6 +5,8 @@ import { CssBaseline, ThemeProvider } from "@mui/material";
 import Routes from "./pages/routes";
 import { createTheme } from "@mui/material";
 
+
+
 const theme = createTheme({
   palette: {
     mode: "light",
@@ -23,18 +25,27 @@ const theme = createTheme({
       primary: "rgba(255,255,255,0.87)",
       secondary: "rgba(255,255,255,0.87)",
     },
+    action: {
+      disabledBackground: '#173247',
+      disabled: 'rgba(219, 222, 236, 0.8)',
+
+    }
   },
 });
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
+    
+
+<ThemeProvider theme={theme}>
       <CssBaseline>
         <BrowserRouter>
           <Routes />
         </BrowserRouter>
       </CssBaseline>
     </ThemeProvider>
+
+    
   );
 }
 export default App;
