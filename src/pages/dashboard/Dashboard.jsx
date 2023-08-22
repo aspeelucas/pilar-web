@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React  from "react";
 import {  Paper, Box, Typography, CardActionArea } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import AutoStoriesIcon from "@mui/icons-material/AutoStories";
