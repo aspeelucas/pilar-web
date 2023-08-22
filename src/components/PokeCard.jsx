@@ -2,7 +2,7 @@ import { Card, CardContent, CardMedia, Typography } from "@mui/material";
 import api from "../services/api";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 const PokeModal = withReactContent(Swal);
 
@@ -11,17 +11,16 @@ const PokeCard = ({ item }) => {
   const imgID = path.at(-2);
   const [pokemon, setPokemon] = useState({});
 
-  const getPokemon = async () => {
+  const getPokemon = useCallback(async () => {
     try {
       const result = await api.GET(item.url);
       if (result) {
-       
         setPokemon(result);
       }
     } catch (error) {
       console.log(error);
     }
-  };
+  }, [item.url]);
 
   const showModal = () => {
     PokeModal.fire({
@@ -30,33 +29,32 @@ const PokeCard = ({ item }) => {
         <div className="pokeModal">
           <img src={`${api.IMG_URL}/${imgID}.png`} alt="" />
           <div className="pokeDescription">
-          <p>Height: {pokemon.height}</p>
-          <p>Weight: {pokemon.weight}</p>
-          <p>Base Experience: {pokemon.base_experience}</p>
-          <p>
-            Abilities:{" "}
-            {pokemon.abilities?.map((item, index) => {
-              return <span key={index}>{item.ability.name}, </span>;
-            })}
-          </p>
-          <p>
-            Types:{" "}
-            {pokemon.types?.map((item, index) => {
-              return <span key={index}>{item.type.name}, </span>;
-            })}
-          </p>
+            <p>Height: {pokemon.height}</p>
+            <p>Weight: {pokemon.weight}</p>
+            <p>Base Experience: {pokemon.base_experience}</p>
+            <p>
+              Abilities:{" "}
+              {pokemon.abilities?.map((item, index) => {
+                return <span key={index}>{item.ability.name}, </span>;
+              })}
+            </p>
+            <p>
+              Types:{" "}
+              {pokemon.types?.map((item, index) => {
+                return <span key={index}>{item.type.name}, </span>;
+              })}
+            </p>
           </div>
         </div>
-
       ),
-        showConfirmButton: false,
-        showCloseButton: true,
+      showConfirmButton: false,
+      showCloseButton: true,
     });
   };
 
   useEffect(() => {
     getPokemon();
-  }, [pokemon]);
+  }, [getPokemon]);
   return (
     <Card
       onClick={showModal}
