@@ -11,3 +11,93 @@
     position: absolute;
     margin: auto;
 }
+.pokeModal{
+    background-color: #b2d3ec;
+    border-radius: 20px;
+}
+
+.pokeModal img {
+    width: 200px;
+   
+}
+.pokeDescription{
+    background-color: #c0d9ec;
+border-radius: 20px;
+padding-top: 10px;
+padding-bottom: 10px;
+}
+
+.botonesBoxPokedex{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    width:100%;
+    gap: 0px;
+}
+.boxDashboard{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    flex-direction: row;
+    gap: 0px;
+                
+}
+.tareasCompletadas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    background-color:#173247 ;
+    padding: 50px;
+    border-radius: 10px;
+    width: 40%;
+}
+
+.arrowImgReturn{
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    rotate: 270deg;
+}
+.arrowImgNext{
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    rotate: 90deg;
+}
+
+@media screen and (max-width: 600px){
+    .botonesBoxPokedex{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 20px;
+        width:100%;
+        gap: 10px;
+    }
+
+    .boxDashboard{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        gap: 20px;
+                    
+    }
+    .tareasCompletadas{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        background-color:#173247 ;
+        padding: 50px;
+        border-radius: 10px;
+        width: 70%;
+    }
+};

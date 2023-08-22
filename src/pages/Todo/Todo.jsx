@@ -59,8 +59,7 @@ const Todo = () => {
       theme: "light",
     });
   };
-  
-  
+
   return (
     <Box
       sx={{
@@ -110,7 +109,6 @@ const Todo = () => {
               >
                 Agregar
               </Button>
-              
             </Stack>
           </CardContent>
         </Card>
@@ -129,17 +127,23 @@ const Todo = () => {
                 }}
                 direction="row"
               >
-                <Grid item md={1}>
+                <Grid
+                  item
+                  md={1}
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
                   <Checkbox
-                    
                     color="success"
                     checked={t.completed}
                     onChange={(e) => handleChecked(e, t.id)}
                   />
-                </Grid>
-                <Grid item md={9}>
+
                   <Typography
-                    sx={{ fontSize: 18, fontWeight: 700, marginLeft: "-450px" }}
+                    sx={{ fontSize: 18, fontWeight: 700, marginLeft: "0px" }}
                   >
                     {t.text}
                   </Typography>

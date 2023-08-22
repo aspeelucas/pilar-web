@@ -87,25 +87,10 @@ const Dashboard = () => {
                 Todo
               </Typography>
             </Box>
-            <Box
-              sx={{
-                display: "flex",
-                justifyContent: "space-around",
-                marginBottom: "40px",
-                marginTop: "40px",
-              }}
+            <Box className="boxDashboard"
+             
             >
-              <Box
-                sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  gap: 5,
-                  backgroundColor: "#173247",
-                  padding: "50px",
-                  borderRadius: "10px",
-                  width: "40%",
-                }}
+              <Box className="tareasCompletadas"
               >
                 <Typography variant="h4" sx={{ textAlign: "center" }}>
                   TAREAS{" "}
@@ -121,18 +106,7 @@ const Dashboard = () => {
                   {` ${getCompleted()} / ${todo.length} `}
                 </Typography>
               </Box>
-              <Box
-                sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  gap: 5,
-                  backgroundColor: "#173247",
-                  padding: "50px",
-                  borderRadius: "10px",
-
-                  width: "40%",
-                }}
+              <Box className="tareasCompletadas"
               >
                 <Typography variant="h4" sx={{ textAlign: "center" }}>
                   TAREAS{" "}
